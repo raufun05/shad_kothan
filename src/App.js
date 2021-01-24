@@ -32,7 +32,7 @@ window.onclick = function(event) {
         </header>
         <main className= "main">
           <div>
-            <div><a href="https://www.shadkothan.com"> <img className="logo" src="/images/shad_kothan_01.png" alt="Logo" /></a>
+            <a href="https://www.shadkothan.com"> <img className="logo" src="/images/shad_kothan_01.png" alt="Logo" /></a>
             <div className="dropdown">
               <button onClick={myFunction} className="dropbtn">Categories <i class="fa fa-caret-down" aria-hidden="true"></i></button>
               <div id="myDropdown" className="dropdown-content">
@@ -40,7 +40,6 @@ window.onclick = function(event) {
                 <a href="#desserts">Desserts</a>
                 <a href="#appetizers">Appetizers</a>
               </div>
-            </div>
             </div>
           </div>
           <div className= "content">
