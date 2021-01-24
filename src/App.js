@@ -1,7 +1,24 @@
 import logo from './logo.svg';
+import React from 'react';
 import './App.css';
 
 function App() {
+  const myFunction = () => {
+    document.getElementById("myDropdown").classList.toggle("show");
+  }
+  // Close the dropdown menu if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
   return (
     <div className="grid-container">
         <header className= "header">
@@ -12,11 +29,19 @@ function App() {
                 <a href="cart.html">Cart</a> 
                 <a href="signin.html">Sign In</a>
             </div>
-           
         </header>
         <main className= "main">
           <div>
-            <a href="https://www.shadkothan.com"> <img className="logo" src="/images/shad_kothan_01.png" alt="Logo" /></a>
+            <div><a href="https://www.shadkothan.com"> <img className="logo" src="/images/shad_kothan_01.png" alt="Logo" /></a>
+            <div className="dropdown">
+              <button onClick={myFunction} className="dropbtn">Categories <i class="fa fa-caret-down" aria-hidden="true"></i></button>
+              <div id="myDropdown" className="dropdown-content">
+                <a href="#rice">Rice Entrees</a>
+                <a href="#desserts">Desserts</a>
+                <a href="#appetizers">Appetizers</a>
+              </div>
+            </div>
+            </div>
           </div>
           <div className= "content">
             <ul className= "products">
@@ -167,6 +192,7 @@ function App() {
             </ul>
           </div>        
         </main>
+        
     </div>
 
   );
